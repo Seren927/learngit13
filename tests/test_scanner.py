@@ -17,8 +17,8 @@ class ScannerTest(unittest.TestCase):
 
     def test_parse_repository_url(self) -> None:
         self.assertEqual(
-            parse_repository_url("https://github.com/learngit13/OpenRepoLens_13"),
-            ("learngit13", "OpenRepoLens_13"),
+            parse_repository_url("https://github.com/Seren927/learngit13"),
+            ("Seren927", "learngit13"),
         )
         self.assertEqual(
             parse_repository_url("https://github.com/openai/openai-python.git"),

@@ -9,7 +9,7 @@ description = "A lightweight open-source repository health scanner."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Zheng Qianhuan", email = "learngit13@users.noreply.github.com" }]
+authors = [{ name = "Zheng Qianhuan", email = "Seren927@users.noreply.github.com" }]
 keywords = ["open-source", "repository-health", "documentation", "github"]
 classifiers = [
   "Programming Language :: Python :: 3",
@@ -18,8 +18,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/learngit13/OpenRepoLens_13"
-Issues = "https://github.com/learngit13/OpenRepoLens_13/issues"
+Homepage = "https://github.com/Seren927/learngit13"
+Issues = "https://github.com/Seren927/learngit13/issues"
 
 [project.scripts]
 openrepolens = "openrepolens.cli:main"

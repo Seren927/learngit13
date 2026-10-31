@@ -39,7 +39,7 @@ document.querySelectorAll(".mode-button").forEach((button) => {
       elements.input.setAttribute("aria-label", "待扫描的本地路径");
     } else {
       elements.prefix.textContent = "URL";
-      elements.input.value = "https://github.com/learngit13/OpenRepoLens_13";
+      elements.input.value = "https://github.com/Seren927/learngit13";
       elements.input.placeholder = "https://github.com/owner/repo";
       elements.input.setAttribute("aria-label", "待扫描的 GitHub 仓库地址");
     }

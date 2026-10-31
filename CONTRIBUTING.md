@@ -11,7 +11,7 @@
 ## 开发环境
 
 ```bash
-git clone https://github.com/learngit13/OpenRepoLens_13.git
+git clone https://github.com/Seren927/learngit13.git
 cd OpenRepoLens_13
 python -m unittest discover -s tests -v
 ```

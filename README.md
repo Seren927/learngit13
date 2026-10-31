@@ -2,7 +2,7 @@
 
 > 一个零第三方依赖、可解释、可本地运行的开源仓库健康度检测工具。
 
-[![Tests](https://github.com/learngit13/OpenRepoLens_13/actions/workflows/tests.yml/badge.svg)](https://github.com/learngit13/OpenRepoLens_13/actions/workflows/tests.yml)
+[![Tests](https://github.com/Seren927/learngit13/actions/workflows/tests.yml/badge.svg)](https://github.com/Seren927/learngit13/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-42e2b8.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-64c8ff.svg)](pyproject.toml)
 
@@ -33,7 +33,7 @@ OpenRepoLens 面向准备开源或正在维护开源项目的学生与个人开�
 ### 获取项目
 
 ```bash
-git clone https://github.com/learngit13/OpenRepoLens_13.git
+git clone https://github.com/Seren927/learngit13.git
 cd OpenRepoLens_13
 ```
 
@@ -63,7 +63,7 @@ python -m openrepolens scan --path . --json
 扫描公开 GitHub 仓库：
 
 ```bash
-python -m openrepolens scan --url https://github.com/learngit13/OpenRepoLens_13
+python -m openrepolens scan --url https://github.com/Seren927/learngit13
 ```
 
 如需提高 GitHub API 的访问额度，可以设置只读令牌：
@@ -128,9 +128,9 @@ ruff check .
 
 ## 维护者
 
-- 项目维护者：郑骞欢（learngit13）
+- 项目维护者：郑骞欢（Seren927）
 - 课程：成都信息工程大学《开源文化运动》
-- 反馈入口：<https://github.com/learngit13/OpenRepoLens_13/issues>
+- 反馈入口：<https://github.com/Seren927/learngit13/issues>
 
 ## 许可证
 

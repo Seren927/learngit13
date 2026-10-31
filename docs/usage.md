@@ -29,7 +29,7 @@ python -m openrepolens serve --port 8765 --open
 选择“GitHub 仓库”，输入公开仓库地址，例如：
 
 ```text
-https://github.com/learngit13/OpenRepoLens_13
+https://github.com/Seren927/learngit13
 ```
 
 远程模式读取仓库元数据、默认分支文件树及关键文档。GitHub 匿名 API 有访问频率限制；如遇 403，可设置 `GITHUB_TOKEN` 后重新启动服务。
