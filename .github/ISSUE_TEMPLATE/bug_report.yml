@@ -1,0 +1,40 @@
+name: 缺陷报告
+description: 报告扫描结果、页面或命令行中的可复现问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请先搜索现有 Issue，并确保内容不包含令牌或个人隐私信息。
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 实际发生了什么，期望结果是什么？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 运行 python -m openrepolens ...
+        2. 输入 ...
+        3. 看到 ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 运行环境
+      description: 操作系统与 Python 版本
+      placeholder: Windows 11 / Python 3.12
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 补充材料
+      description: 可附截图、日志或最小仓库结构；请先移除敏感信息。
+

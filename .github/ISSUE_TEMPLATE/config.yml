@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全问题私下报告
+    url: https://github.com/learngit13/OpenRepoLens_13/security/policy
+    about: 请勿在公开 Issue 中披露漏洞细节或访问令牌。
+

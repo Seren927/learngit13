@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="OpenRepoLens 是一个轻量、可运行的开源仓库健康度检测工具。"
+    />
+    <title>OpenRepoLens · 开源仓库健康度检测</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-glow glow-one"></div>
+    <div class="page-glow glow-two"></div>
+
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="OpenRepoLens 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-orbit"></span>
+          <span class="brand-core"></span>
+        </span>
+        <span class="brand-name">OpenRepoLens</span>
+        <span class="brand-version">v1.0</span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#scan">开始检测</a>
+        <a href="#dimensions">评分维度</a>
+        <a href="https://github.com/learngit13/OpenRepoLens_13" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+      <div class="status-pill"><span></span> 标准库运行</div>
+    </header>
+
+    <main>
+      <section class="hero" id="scan">
+        <div class="hero-copy">
+          <div class="eyebrow"><span>OPEN SOURCE HEALTH</span><i></i>LOCAL FIRST</div>
+          <h1>让开源仓库<em>更健康</em><br />让协作更有依据</h1>
+          <p class="lede">
+            从许可证、README、项目文档、社区协作到工程质量，用 23 项可解释检查生成清晰诊断，帮助维护者把“能开源”变成“值得参与”。
+          </p>
+
+          <form class="scan-form" id="scan-form">
+            <div class="mode-switch" aria-label="扫描模式">
+              <button type="button" class="mode-button active" data-mode="local">本地项目</button>
+              <button type="button" class="mode-button" data-mode="remote">GitHub 仓库</button>
+            </div>
+            <div class="input-shell">
+              <span class="input-prefix" id="input-prefix">PATH</span>
+              <input
+                id="target-input"
+                name="target"
+                type="text"
+                value="."
+                autocomplete="off"
+                aria-label="待扫描的本地路径"
+                placeholder="输入本地仓库路径"
+              />
+              <button class="scan-button" type="submit" id="scan-button">
+                <span>开始检测</span>
+                <span class="button-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+            <div class="form-meta">
+              <span>默认扫描当前项目</span>
+              <span>数据仅在本机处理</span>
+            </div>
+          </form>
+
+          <div class="hero-metrics" aria-label="工具特点">
+            <div><strong>23</strong><span>可解释检查</span></div>
+            <div><strong>5</strong><span>健康维度</span></div>
+            <div><strong>0</strong><span>第三方依赖</span></div>
+          </div>
+        </div>
+
+        <aside class="score-shell" aria-live="polite">
+          <div class="score-card">
+            <div class="score-card-head">
+              <div>
+                <span class="card-kicker">CURRENT AUDIT</span>
+                <h2 id="repo-name">OpenRepoLens_13</h2>
+              </div>
+              <span class="grade-chip" id="grade-chip">A+</span>
+            </div>
+            <div class="score-main">
+              <div class="score-ring" id="score-ring" style="--score: 0">
+                <div class="ring-inner">
+                  <span id="score-value">--</span>
+                  <small>/ 100</small>
+                </div>
+              </div>
+              <div class="score-summary">
+                <span class="summary-label">健康度结论</span>
+                <p id="score-summary">正在读取仓库结构并执行检查...</p>
+              </div>
+            </div>
+            <div class="score-footer">
+              <div><span>通过</span><strong id="passed-count">--</strong></div>
+              <div><span>建议</span><strong id="warning-count">--</strong></div>
+              <div><span>缺失</span><strong id="failed-count">--</strong></div>
+              <div class="scan-time"><span>最近扫描</span><strong id="scan-time">--:--</strong></div>
+            </div>
+          </div>
+          <div class="floating-note">
+            <span class="note-dot"></span>
+            <p><strong>可复现评分</strong><br />规则公开，结果可被审查。</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="results" id="results">
+        <div class="section-heading">
+          <div>
+            <span class="section-index">01 / OVERVIEW</span>
+            <h2>健康度画像</h2>
+          </div>
+          <p id="source-label">等待扫描结果</p>
+        </div>
+
+        <div class="overview-grid">
+          <div class="category-panel panel">
+            <div class="panel-head">
+              <h3>五维得分</h3>
+              <span id="category-total">0 / 100</span>
+            </div>
+            <div id="category-list" class="category-list"></div>
+          </div>
+
+          <div class="recommend-panel panel">
+            <div class="panel-head">
+              <h3>优先改进</h3>
+              <span>ACTION LIST</span>
+            </div>
+            <ol id="recommendation-list" class="recommendation-list"></ol>
+          </div>
+        </div>
+
+        <div class="detail-panel panel">
+          <div class="panel-head detail-head">
+            <div>
+              <span class="section-index">02 / CHECKS</span>
+              <h3>检查明细</h3>
+            </div>
+            <div class="filter-group" aria-label="筛选检查结果">
+              <button type="button" class="filter-button active" data-filter="all">全部</button>
+              <button type="button" class="filter-button" data-filter="attention">待改进</button>
+            </div>
+          </div>
+          <div class="check-table" role="table" aria-label="仓库检查结果">
+            <div class="check-header" role="row">
+              <span>状态</span><span>检查项</span><span>证据</span><span>得分</span>
+            </div>
+            <div id="check-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dimensions" id="dimensions">
+        <div class="section-heading">
+          <div>
+            <span class="section-index">03 / METHOD</span>
+            <h2>评分不是黑盒</h2>
+          </div>
+          <p>每项检查都说明得分依据和可执行的改进方向。</p>
+        </div>
+        <div class="method-grid">
+          <article><span>01</span><h3>文档可理解</h3><p>README、安装步骤、功能说明与可视化材料共同决定新人能否快速上手。</p></article>
+          <article><span>02</span><h3>协作可参与</h3><p>贡献指南、Issue/PR 模板、行为准则与公开路线图降低参与门槛。</p></article>
+          <article><span>03</span><h3>质量可验证</h3><p>测试、CI、项目元数据、忽略规则和静态检查让变更可以被持续验证。</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand"><span class="brand-mark small"><span class="brand-core"></span></span> OpenRepoLens_13</div>
+      <p>开源文化运动课程项目 · 成都信息工程大学 · 郑骞欢</p>
+      <span>MIT License · 2026</span>
+    </footer>
+
+    <div class="toast" id="toast" role="alert"></div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+
